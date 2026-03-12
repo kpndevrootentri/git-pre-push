@@ -1,9 +1,14 @@
 {
-  "name": "entri-pre-push",
+  "name": "git-hook-prepush",
   "version": "1.0.0",
+  "author": "Vishnu V",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kpndevrootentri/entri-pre-push.git"
+  },
   "description": "Shared pre-push hook with build check and skip option",
   "bin": {
-    "entri-pre-push": "./bin/setup.js"
+    "git-hook-prepush": "bin/setup.js"
   },
   "scripts": {
     "postinstall": "node bin/setup.js"
@@ -12,6 +17,11 @@
     "bin/",
     "hooks/"
   ],
-  "keywords": ["git", "hooks", "pre-push", "build"],
+  "keywords": [
+    "git",
+    "hooks",
+    "pre-push",
+    "build"
+  ],
   "license": "MIT"
 }

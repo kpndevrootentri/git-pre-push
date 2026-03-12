@@ -11,8 +11,8 @@ BUILD_CMD="${BUILD_CMD:-npm run build}"
 
 BRANCH_NAME=$(git symbolic-ref --short HEAD 2>/dev/null)
 
-# Skip build with: git push -o skip
-if [ "$GIT_PUSH_OPTION_0" = "skip" ]; then
+# Skip build with: SKIP_BUILD=1 git push
+if [ "$SKIP_BUILD" = "1" ]; then
   echo "⏭  Skipping build check..."
   exit 0
 fi
@@ -50,7 +50,7 @@ if [ "$NEEDS_BUILD" = true ]; then
     echo "-----------------------------------------------------------"
     echo "❌ Build failed. Push to '$BRANCH_NAME' has been blocked."
     echo "   Fix the build errors above and try again."
-    echo "   To skip: git push -o skip"
+    echo "   To skip: SKIP_BUILD=1 git push"
     echo "-----------------------------------------------------------"
     exit 1
   fi

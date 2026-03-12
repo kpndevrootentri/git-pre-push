@@ -1,4 +1,4 @@
-# entri-pre-push
+# git-hook-prepush
 
 A shared Git pre-push hook that runs a build check before allowing pushes to protected branches. Prevents broken builds from being pushed to important branches like `dev`, `alpha-1`, `alpha-2`, etc.
 
@@ -7,13 +7,13 @@ A shared Git pre-push hook that runs a build check before allowing pushes to pro
 ### npm
 
 ```bash
-npm install entri-pre-push --save-dev
+npm install git-hook-prepush --save-dev
 ```
 
 ### yarn
 
 ```bash
-yarn add entri-pre-push --dev
+yarn add git-hook-prepush --dev
 ```
 
 The hook is automatically installed during `postinstall`. It creates a `.githooks/pre-push` file and configures Git to use it.
@@ -37,7 +37,7 @@ git push origin dev
 ### Skip the build check
 
 ```bash
-git push -o skip
+SKIP_BUILD=1 git push
 ```
 
 ## Configuration
@@ -82,10 +82,10 @@ If the hook wasn't installed automatically, run:
 
 ```bash
 # npm
-npx entri-pre-push
+npx git-hook-prepush
 
 # yarn
-yarn entri-pre-push
+yarn git-hook-prepush
 ```
 
 ## Uninstall
@@ -94,10 +94,10 @@ Remove the package and reset the Git hooks path:
 
 ```bash
 # npm
-npm uninstall entri-pre-push
+npm uninstall git-hook-prepush
 
 # yarn
-yarn remove entri-pre-push
+yarn remove git-hook-prepush
 
 # Reset Git hooks path
 git config --unset core.hooksPath

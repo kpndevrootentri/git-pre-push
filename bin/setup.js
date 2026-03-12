@@ -41,7 +41,7 @@ try {
   // Not a git repo, skip
 }
 
-console.log("✅ entri-pre-push hook installed at .githooks/pre-push");
+console.log("✅ git-hook-prepush hook installed at .githooks/pre-push");
 console.log("");
 console.log("   git push          → runs build check on protected branches");
 console.log("   git push -o skip  → skip build check");
